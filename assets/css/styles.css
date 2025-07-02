@@ -1,0 +1,1204 @@
+/* --- Variables CSS para colores y tipografía (Definición Global) --- */
+:root {
+    --primary-color: #007bff; /* Azul vibrante: Confianza, profesionalismo */
+    --secondary-color: #28a745; /* Verde esperanza: Crecimiento, naturaleza, vitalidad */
+    --accent-color: #ffc107; /* Amarillo mostaza: Energía, optimismo, calidez */
+    --text-color: #333; /* Gris oscuro para texto principal */
+    --light-gray: #f8f9fa; /* Fondo claro para secciones alternas */
+    --dark-gray: #6c757d; /* Gris para texto secundario */
+    --white: #ffffff;
+    --black: #000000;
+    --font-primary: 'Montserrat', sans-serif; /* Fuente para títulos y elementos destacados */
+    --font-secondary: 'Open Sans', sans-serif; /* Fuente para párrafos y texto general */
+}
+
+/* --- Reset Básico y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho/alto total */
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave para enlaces de ancla */
+}
+
+body {
+    font-family: var(--font-secondary);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para mejor legibilidad en Webkit */
+    -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para Firefox en macOS */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Padding horizontal para evitar que el contenido toque los bordes */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease; /* Transición suave para cambios al interactuar */
+}
+
+a:hover {
+    color: var(--secondary-color);
+    opacity: 0.9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-rendering: optimizeLegibility; /* Mejora la renderización del texto para legibilidad */
+}
+
+h1 { font-size: 2.8rem; font-weight: 700; }
+h2 { font-size: 2.2rem; font-weight: 600; margin-top: 2rem; }
+h3 { font-size: 1.8rem; font-weight: 600; margin-top: 1.5rem; }
+p { margin-bottom: 1rem; }
+
+/* --- Mejorar el estado de enfoque para accesibilidad --- */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+    outline: 2px solid var(--accent-color); /* Color de acento para el foco */
+    outline-offset: 3px; /* Separación del borde del elemento */
+    /* Usar box-shadow con un color semi-transparente para mayor visibilidad y estética */
+    box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.3);
+}
+
+/* Quitar el outline para usuarios que usan el ratón y no lo necesitan constantemente */
+/* Esto es avanzado y requiere JS para detectar la navegación por teclado.
+   Por ahora, es mejor mantener el outline para todos los usuarios por defecto. */
+/* Puedes implementar esto con un script que añada la clase 'user-is-tabbing' al body
+   cuando se detecta una pulsación de tecla Tab. */
+/*
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) textarea:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) a:focus {
+    outline: none;
+    box-shadow: none;
+}
+*/
+
+/* --- Botones --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px; /* Bordes muy redondeados para efecto píldora */
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease; /* Transición para todos los cambios al pasar el ratón */
+    cursor: pointer;
+    border: 2px solid transparent; /* Borde transparente por defecto */
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Un azul ligeramente más oscuro al pasar el ratón */
+    border-color: #0056b3;
+    transform: translateY(-2px); /* Pequeño efecto de elevación al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Sombra suave para el efecto de elevación */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #218838; /* Un verde ligeramente más oscuro */
+    border-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btn-primary-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+}
+
+/* --- Secciones Generales --- */
+section {
+    padding: 80px 0; /* Espaciado estándar para todas las secciones */
+    text-align: center;
+    overflow: hidden; /* Para contener elementos flotantes o animaciones */
+}
+
+section:nth-child(even) { /* Aplica un fondo claro a secciones alternas */
+    background-color: var(--light-gray);
+}
+
+.section-description {
+    max-width: 800px;
+    margin: 0 auto 3rem auto; /* Centra el párrafo y añade margen inferior */
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra sutil para darle profundidad */
+    padding: 15px 0;
+    position: sticky; /* Hace que el header se quede arriba al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.logo img {
+    height: 60px; /* Tamaño fijo para el logo */
+    vertical-align: middle;
+}
+
+.main-nav .nav-list {
+    list-style: none; /* Elimina viñetas de la lista */
+    display: flex; /* Alinea los elementos del menú horizontalmente */
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .nav-list li {
+    margin-left: 30px; /* Espacio entre los elementos del menú */
+}
+
+.main-nav .nav-list a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative; /* Para el efecto de la línea inferior */
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.main-nav .nav-list a::after { /* Línea animada bajo los enlaces de navegación */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Posición de la línea debajo del texto */
+    width: 0; /* Ancho inicial de la línea (cero) */
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease; /* Animación de ancho */
+}
+
+.main-nav .nav-list a:hover::after,
+.main-nav .nav-list a.active::after {
+    width: 100%; /* La línea se extiende al 100% al pasar el ratón o si el enlace está activo */
+}
+
+.menu-toggle {
+    display: none; /* Oculto por defecto en desktop (aparece en mobile) */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 10px;
+}
+.menu-toggle:focus { /* Mejora el enfoque para el botón de menú */
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    /* Gradiente para oscurecer la imagen y hacer el texto legible */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/hero-banner.jpg') no-repeat center center/cover;
+    color: var(--white);
+    padding: 120px 0;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    min-height: 70vh; /* Altura mínima para una sección prominente */
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido esté sobre el gradiente */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4); /* Sombra para el texto para mejor legibilidad */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    color: rgba(255,255,255,0.9);
+}
+
+.hero-actions .btn {
+    margin: 10px; /* Espacio entre botones en la sección hero */
+}
+
+/* --- About Brief Section (Features Grid) --- */
+.about-brief {
+    padding: 80px 0; /* Espaciado consistente */
+    background-color: #f9f9f9; /* Fondo suave */
+    text-align: center;
+}
+
+.about-brief .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-brief h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-brief h2::after { /* Línea decorativa bajo el título H2 */
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color); /* Usa tu color primario */
+    border-radius: 2px;
+}
+
+.about-brief .section-description {
+    font-family: var(--font-secondary);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.features-grid {
+    display: grid;
+    /* Adapta el número de columnas: mínimo 280px por columna, se ajusta a 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Sombra para efecto de elevación */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 280px; /* Asegura una altura mínima para uniformidad */
+}
+
+.feature-item:hover {
+    transform: translateY(-8px); /* Efecto de "levantar" */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hover */
+}
+
+.feature-item i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    transition: color 0.3s ease;
+}
+
+.feature-item:hover i {
+    color: var(--secondary-color); /* Cambia el color del icono al pasar el ratón */
+}
+
+.feature-item h3 {
+    font-family: var(--font-primary);
+    font-size: 1.7rem;
+    color: #444;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-item p {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* Estilos para listas dentro de feature-item (si se usan) */
+.feature-item p ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.feature-item p ul li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+    color: #666;
+}
+
+.feature-item p ul li::before {
+    content: '\2022'; /* Símbolo de viñeta (círculo) */
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* --- Our Impact Section --- */
+.our-impact {
+    background-color: var(--light-gray);
+    padding: 80px 0; /* Consistente con otras secciones */
+}
+
+.impact-metrics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    margin-top: 40px;
+}
+
+.metric-item {
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Permite que los elementos crezcan para ocupar espacio */
+    min-width: 200px; /* Ancho mínimo para cada métrica */
+    margin: 15px;
+}
+
+.metric-item h3 {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+    position: relative;
+}
+
+/* El signo más lo estamos manejando con JavaScript en animation.js,
+   así que este ::after CSS es menos necesario si el JS es el controlador principal.
+   Sin embargo, si quisieras un + estático para todos, este es el lugar.
+   Dado que el JS lo maneja, podrías eliminar este ::after si quieres el control total en JS.
+*/
+/*
+.metric-item h3::after {
+    content: '+';
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+*/
+/* Si tienes un elemento sin +, como "Años de Experiencia", podrías mantener el + por JS y no por CSS */
+/* Puedes comentar o quitar el bloque ::after de arriba si el JS ya agrega el '+' */
+
+
+.metric-item p {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Testimonials Section --- */
+.testimonials {
+    background-color: var(--white);
+    padding: 80px 0;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scroll-snap-type: x mandatory; /* Snap a los elementos al desplazarse */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+    margin-top: 40px;
+    padding-bottom: 20px;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.testimonial-item {
+    flex: 0 0 45%; /* Cada testimonio ocupa el 45% del ancho para mostrar dos por vista */
+    min-width: 300px;
+    scroll-snap-align: start;
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+/* No es necesario un margen derecho específico para el último con `gap` */
+/* .testimonial-item:last-child { margin-right: 0; } */
+
+.testimonial-item p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.testimonial-item h4 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.testimonial-item span {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    display: block;
+}
+
+/* --- Call to Action Section --- */
+.call-to-action {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/cta-background.webp') no-repeat center center/cover;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.call-to-action::before { /* Capa de superposición para la imagen de fondo */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Gradiente más oscuro para mayor legibilidad */
+    z-index: 0;
+}
+
+.call-to-action > * { /* Asegura que el contenido esté sobre la superposición */
+    position: relative;
+    z-index: 1;
+}
+
+.call-to-action h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255,255,255,0.9);
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    padding-top: 60px;
+    font-size: 0.95rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Separador visual */
+}
+
+.footer-section {
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.footer-section p {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: rgba(255,255,255,0.7);
+    transition: color 0.3s ease;
+    display: inline-block; /* Permite padding/margin en enlaces de lista */
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px); /* Pequeño efecto de deslizamiento al pasar el ratón */
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.social-links.large-icons a {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.footer-bottom {
+    background-color: #222; /* Un gris aún más oscuro para el pie de página final */
+    padding: 20px 0;
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+}
+
+/* Newsletter Form (dentro del footer) */
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.newsletter-form input[type="email"] {
+    flex-grow: 1; /* Ocupa el espacio disponible */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px 0 0 5px; /* Bordes redondeados solo a la izquierda */
+    font-size: 0.9rem;
+    background-color: rgba(255,255,255,0.9);
+    color: var(--text-color);
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: var(--dark-gray);
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 0 5px 5px 0; /* Bordes redondeados solo a la derecha */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* --- Contact Page Specific Styles --- */
+.page-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/contact-hero.webp') no-repeat center center/cover;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero h1 {
+    color: var(--white);
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.page-hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.contact-info-section {
+    padding: 60px 0;
+    text-align: left;
+}
+
+.grid-2-columns {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Columna del formulario un poco más ancha */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contact-details h2, .contact-form-container h2 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: left;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    display: inline-block; /* Para que la línea cubra solo el ancho del título */
+}
+
+.contact-details p {
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+    display: flex; /* Para alinear el icono con el texto */
+    align-items: flex-start;
+    color: var(--text-color);
+}
+.contact-details p i {
+    margin-right: 15px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    flex-shrink: 0; /* Evita que el icono se encoja si el texto es muy largo */
+    margin-top: 4px; /* Ajuste vertical para alinear el icono con el texto */
+}
+.contact-details p a {
+    word-break: break-all; /* Rompe palabras largas para evitar desbordamiento */
+    color: var(--text-color);
+    text-decoration: underline;
+}
+.contact-details p a:hover {
+    color: var(--primary-color);
+}
+
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    width: auto; /* El botón solo ocupa el ancho necesario */
+    padding: 14px 30px;
+    font-size: 1.1rem;
+    display: block; /* Para que ocupe todo el ancho si es necesario en móvil */
+    margin-top: 20px;
+}
+
+.form-message { /* Mensajes de éxito/error del formulario */
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.map-section {
+    padding: 0 0 80px 0; /* Padding inferior más generoso */
+    text-align: center;
+}
+
+.map-embed {
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden; /* Oculta partes del iframe que se salgan del borde redondeado */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.map-embed iframe {
+    border: 0;
+    width: 100%;
+    height: 450px;
+    display: block; /* Elimina espacio extra que los iframes a veces añaden abajo */
+}
+
+/* Ajustes de tamaño de icono para la página de contacto */
+.contact-details h3 {
+    margin-top: 30px;
+}
+
+/* --- Estilos de Scrollbar (para navegadores Webkit como Chrome, Safari) --- */
+/* Es un buen detalle, pero recuerda que no funciona en todos los navegadores. */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* --- Animaciones de Scroll Reveal --- */
+/* Estas clases son para ser usadas por la librería ScrollReveal.js.
+   Están diseñadas para que los elementos empiecen invisibles y se animen al aparecer. */
+.hidden-for-reveal {
+    opacity: 0;
+    transform: translateY(20px); /* Empieza un poco más abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición para la animación */
+}
+
+.fade-in-up { /* Clase que ScrollReveal añade para hacer el elemento visible */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Opcional: Retrasos para elementos en grid */
+/* Esto crea un efecto escalonado donde los elementos aparecen uno tras otro.
+   Asegúrate de que los selectores CSS coincidan con la estructura de tus grids.
+   Añade más `nth-child` si tienes más columnas o elementos por fila. */
+.features-grid .feature-item,
+.impact-metrics .metric-item,
+.testimonial-slider .testimonial-item,
+/* Agrega más clases de grids si tienes, por ejemplo: */
+/* .programs-grid .program-card,
+.benefits-grid .benefit-item,
+.donation-options .donation-card,
+.volunteer-grid .volunteer-role-card,
+.partnership-benefits .benefit-item,
+.mission-vision-values .item,
+.team-grid .team-member,
+.celebrations-grid .celebration-item,
+.success-story-grid .story-card */
+{
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición base para todos */
+}
+
+/* Define los retrasos para cada elemento en la fila */
+.features-grid .feature-item:nth-child(1),
+/* .programs-grid .program-card:nth-child(1), etc. */
+{ transition-delay: 0s; }
+
+.features-grid .feature-item:nth-child(2),
+/* .programs-grid .program-card:nth-child(2), etc. */
+{ transition-delay: 0.1s; }
+
+.features-grid .feature-item:nth-child(3),
+/* .programs-grid .program-card:nth-child(3), etc. */
+{ transition-delay: 0.2s; }
+
+.features-grid .feature-item:nth-child(4),
+/* .programs-grid .program-card:nth-child(4), etc. */
+{ transition-delay: 0.3s; }
+/* ...y así sucesivamente para más elementos en tu grid, ajustando el delay */
+
+
+/* --- Media Queries para Responsividad Globales --- */
+
+/* Tabletas y pantallas más pequeñas (ancho máximo de 991px) */
+@media (max-width: 991px) {
+    /* Ajustes generales para secciones */
+    section {
+        padding: 60px 0; /* Menos padding en pantallas más pequeñas */
+    }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; }
+    .section-description {
+        font-size: 1.05rem;
+        margin-bottom: 40px;
+    }
+
+    /* Header */
+    .main-header {
+        padding: 10px 0;
+    }
+    .logo img {
+        height: 50px;
+    }
+    .main-nav { /* La navegación pasa a ser un menú hamburguesa */
+        width: 100%;
+        order: 3; /* Asegura que la nav se coloque debajo del logo/toggle */
+        display: none; /* Oculta el menú por defecto en mobile */
+        flex-basis: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center;
+    }
+    .main-nav.active { /* Se muestra cuando el JS añade la clase 'active' */
+        display: block;
+    }
+    .main-nav .nav-list {
+        flex-direction: column; /* Elementos del menú en columna */
+        align-items: center;
+        padding: 20px 0;
+        background-color: var(--white); /* Fondo para el menú desplegado */
+        border-top: 1px solid #eee;
+    }
+    .main-nav .nav-list li {
+        margin: 10px 0; /* Espacio vertical entre items del menú */
+    }
+    .main-nav .nav-list a {
+        font-size: 1.1rem;
+        padding: 10px 0;
+        width: 100%; /* Asegura que el área de clic sea amplia */
+    }
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú en móviles */
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 80px 0;
+        min-height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    /* About Brief */
+    .about-brief {
+        padding: 60px 0;
+    }
+    .about-brief h2 {
+        font-size: 2.2rem;
+    }
+    .about-brief .section-description {
+        font-size: 1.05rem;
+    }
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mínimo 250px para 2 columnas */
+        gap: 25px;
+    }
+    .feature-item {
+        padding: 25px;
+        min-height: auto; /* Deja que la altura se ajuste al contenido en tablets */
+    }
+    .feature-item i {
+        font-size: 3rem;
+    }
+    .feature-item h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Our Impact */
+    .impact-metrics {
+        flex-direction: column; /* Las métricas se apilan verticalmente */
+    }
+    .metric-item {
+        min-width: 250px; /* Asegura un buen ancho para cada item apilado */
+    }
+    .metric-item h3 {
+        font-size: 3rem;
+    }
+
+    /* Testimonials */
+    .testimonial-slider {
+        flex-wrap: nowrap; /* Fuerza el scroll horizontal */
+        justify-content: flex-start;
+        padding: 0 20px 20px; /* Padding para que el scrollbar sea visible */
+    }
+    .testimonial-item {
+        flex: 0 0 80%; /* Cada testimonio ocupa el 80% del ancho para un mejor vistazo */
+        min-width: 280px; /* Asegura que no sean demasiado pequeños */
+    }
+
+    /* Contact Page */
+    .grid-2-columns {
+        grid-template-columns: 1fr; /* Una sola columna para contacto */
+        gap: 40px;
+    }
+    .contact-details, .contact-form-container {
+        text-align: center; /* Centra el texto */
+    }
+    .contact-details h2, .contact-form-container h2 {
+        text-align: center;
+        margin: 0 auto 20px auto; /* Centra los títulos con línea */
+    }
+    .contact-details h2::after { /* Alinea la línea del título con el centro */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .contact-details p {
+        justify-content: center; /* Centra los iconos con el texto */
+    }
+    .social-links {
+        justify-content: center; /* Centra los iconos sociales */
+    }
+}
+
+/* Teléfonos móviles (ancho máximo de 767px) */
+@media (max-width: 767px) {
+    /* Ajustes generales */
+    section {
+        padding: 40px 0;
+    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+    p { font-size: 0.95rem; }
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* Botones */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .btn-large {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Header */
+    .logo img {
+        height: 45px;
+    }
+    .main-nav .nav-list a {
+        font-size: 1rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 60px 0;
+        min-height: 50vh;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column; /* Apila los botones en móviles */
+        align-items: center;
+    }
+    .hero-actions .btn {
+        margin: 8px 0; /* Espacio vertical entre botones */
+        width: 80%; /* Botones más anchos */
+        max-width: 250px;
+    }
+
+    /* About Brief */
+    .about-brief {
+        padding: 40px 0;
+    }
+    .about-brief h2 {
+        font-size: 1.8rem;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+        gap: 20px;
+    }
+    .feature-item {
+        padding: 20px;
+    }
+    .feature-item i {
+        font-size: 2.5rem;
+    }
+    .feature-item h3 {
+        font-size: 1.3rem;
+    }
+    .feature-item p {
+        font-size: 0.9rem;
+    }
+
+    /* Our Impact */
+    .metric-item h3 {
+        font-size: 2.8rem;
+    }
+    .metric-item p {
+        font-size: 1rem;
+    }
+
+    /* Testimonials */
+    .testimonial-item {
+        flex: 0 0 90%; /* Ocupa casi todo el ancho */
+        min-width: 260px;
+        padding: 25px;
+    }
+    .testimonial-item p {
+        font-size: 1rem;
+    }
+
+    /* Call to Action */
+    .call-to-action {
+        padding: 60px 0;
+    }
+    .call-to-action h2 {
+        font-size: 2rem;
+    }
+    .call-to-action p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding-top: 40px;
+    }
+    .footer-content {
+        grid-template-columns: 1fr; /* Una columna en el footer para móviles */
+        gap: 25px;
+        padding-bottom: 25px;
+    }
+    .footer-section {
+        text-align: center; /* Centra el texto de las secciones del footer */
+    }
+    .footer-section h3 {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center; /* Centra los iconos sociales en el footer */
+    }
+    .newsletter-form {
+        flex-direction: column; /* Apila el input y el botón del newsletter */
+        max-width: 280px;
+        margin: 15px auto 0 auto; /* Centra el formulario */
+    }
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        border-radius: 5px; /* Bordes redondeados completos */
+        width: 100%;
+        margin-bottom: 10px; /* Espacio entre input y botón */
+    }
+    .newsletter-form button {
+        margin-bottom: 0;
+    }
+
+    /* Contact Page */
+    .map-embed {
+        margin-top: 30px;
+    }
+    .map-embed iframe {
+        height: 300px;
+    }
+}

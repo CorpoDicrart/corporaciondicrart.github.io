@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Ayudar - Corporación Dicrart</title>
+    <meta name="description"
+        content="Descubre cómo puedes apoyar la misión de Corporación Dicrart a través de donaciones, voluntariado, alianzas y otras formas de contribución para la inclusión de personas con discapacidad en Bogotá.">
+    <meta name="keywords"
+        content="cómo ayudar, donar, donaciones, voluntariado, voluntario, alianzas, apoyo, contribución, inclusión, discapacidad, ONG, Bogotá">
+    <meta name="author" content="Corporación Dicrart">
+
+    <meta property="og:title" content="Cómo Ayudar - Corporación Dicrart">
+    <meta property="og:description"
+        content="Tu apoyo es fundamental. Descubre las formas de unirte a nuestra causa y transformar vidas.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:url" content="https://www.corporaciondicrart.com/como-ayudar.html">
+    <meta property="og:type" content="website">
+
+    <link rel="shortcut icon" href="/img/logo/logo-sin-fondo.png" type="image/x-icon">
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-o683f/3E2eR5k9eR9z/oJv2R4zP8V7wA+K2lM3D1Wp5v1u9/Qv2v2Zt2/o2Y0Z8N5P/m9b3t/z6R5d4y8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/img/logo/logo-sin-fondo.png" alt="Logo Corporación Dicrart">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="programas.html">Nuestros Programas</a></li>
+                    <li><a href="como-ayudar.html" class="active">Cómo Ayudar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="como-ayudar.html#donar" class="btn btn-primary">Dona Ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero bg-como-ayudar" style="background-image: url('assets/img/hero-ayudar.webp');">
+            <div class="container">
+                <h1>Tu Apoyo Transforma Vidas</h1>
+                <p>Descubre las diferentes formas en que puedes contribuir a nuestra misión de inclusión.</p>
+            </div>
+        </section>
+
+        <section class="how-to-help-intro">
+            <div class="container">
+                <h2>Sé Parte de Nuestro Impacto</h2>
+                <p class="section-description">En Corporación Dicrart, cada contribución cuenta. Gracias a personas como
+                    tú, podemos seguir brindando educación y oportunidades a quienes más lo necesitan. ¡Hay muchas
+                    maneras de unirte a nuestra causa!</p>
+            </div>
+        </section>
+
+        <section id="donar" class="donation-section bg-light-gray">
+            <div class="container">
+                <h2><i class="fas fa-heart primary-color-icon"></i> Dona Ahora</h2>
+                <p class="section-description">Tu aporte económico nos permite mantener y expandir nuestros programas,
+                    adquirir materiales didácticos y garantizar un entorno seguro y adecuado para todos nuestros
+                    beneficiarios.</p>
+
+                <div class="donation-options">
+                    <div class="donation-card">
+                        <h3>Donación Única</h3>
+                        <p>Ayúdanos con un aporte puntual que se destinará a las necesidades más urgentes.</p>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="amount">Monto de la Donación ($COP):</label>
+                                <input type="number" id="amount" name="amount" min="10000" placeholder="Ej. 50000"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Donar Ahora</button>
+                        </form>
+                        <p class="small-text mt-3">Utilizamos plataformas de pago seguras para procesar tu donación.</p>
+                    </div>
+
+                    <div class="donation-card">
+                        <h3>Donación Recurrente</h3>
+                        <p>Conviértete en un padrino o madrina de nuestros programas con una donación mensual.</p>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="recurrence-amount">Monto Mensual ($COP):</label>
+                                <select id="recurrence-amount" name="recurrence-amount" required>
+                                    <option value="">Selecciona un monto</option>
+                                    <option value="20000">COP $20.000</option>
+                                    <option value="50000">COP $50.000</option>
+                                    <option value="100000">COP $100.000</option>
+                                    <option value="other">Otro monto</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-secondary">Suscribirme</button>
+                        </form>
+                        <p class="small-text mt-3">Tu apoyo constante nos brinda estabilidad para planificar a largo
+                            plazo.</p>
+                    </div>
+                </div>
+
+                <div class="bank-details mt-5">
+                    <h3>Opciones de Transferencia Bancaria</h3>
+                    <p>Si prefieres realizar una consignación o transferencia directa, aquí están nuestros datos:</p>
+                    <div class="bank-info-box">
+                        <p><strong>Banco:</strong> Bancolombia</p>
+                        <p><strong>Tipo de Cuenta:</strong> Ahorros</p>
+                        <p><strong>Número de Cuenta:</strong> 123-456789-0 (Ejemplo)</p>
+                        <p><strong>NIT:</strong> 900.123.456-7 (Ejemplo)</p>
+                        <p><strong>Nombre:</strong> Corporación Dicrart</p>
+                    </div>
+                    <p class="small-text">Por favor, envíanos un correo a <a
+                            href="mailto:contabilidad@corporaciondicrart.com">contabilidad@corporaciondicrart.com</a>
+                        con el comprobante de tu donación.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="voluntariado" class="volunteer-section">
+            <div class="container">
+                <h2><i class="fas fa-hand-holding-heart primary-color-icon"></i> Haz Voluntariado</h2>
+                <p class="section-description">Tu tiempo y talento son un regalo invaluable. Conviértete en voluntario y
+                    marca una diferencia directa en la vida de nuestros beneficiarios.</p>
+
+                <div class="volunteer-grid">
+                    <div class="volunteer-role-card">
+                        <h3>Apoyo en Talleres</h3>
+                        <p>Ayuda a nuestros pedagogos en las actividades diarias de los talleres (lectura, juegos,
+                            manualidades).</p>
+                        <p class="requirements">**Requisitos:** Paciencia, empatía, deseo de aprender.</p>
+                    </div>
+                    <div class="volunteer-role-card">
+                        <h3>Organización de Eventos</h3>
+                        <p>Colabora en la planificación y ejecución de eventos especiales para la recaudación de fondos
+                            o integración comunitaria.</p>
+                        <p class="requirements">**Requisitos:** Proactividad, organización, trabajo en equipo.</p>
+                    </div>
+                    <div class="volunteer-role-card">
+                        <h3>Soporte Administrativo</h3>
+                        <p>Asiste en tareas de oficina, gestión de bases de datos o comunicaciones.</p>
+                        <p class="requirements">**Requisitos:** Habilidades informáticas básicas, atención al detalle.
+                        </p>
+                    </div>
+                    <div class="volunteer-role-card">
+                        <h3>Profesionales (Pro Bono)</h3>
+                        <p>Ofrece tus habilidades profesionales (psicología, fisioterapia, comunicación, marketing) de
+                            forma voluntaria.</p>
+                        <p class="requirements">**Requisitos:** Título profesional, experiencia, compromiso.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <p class="lead">¿Listo para unirte a nuestro equipo de voluntarios?</p>
+                    <a href="contacto.html" class="btn btn-primary btn-large">¡Quiero ser Voluntario!</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="alianzas" class="partnerships-section bg-light-gray">
+            <div class="container">
+                <h2><i class="fas fa-handshake primary-color-icon"></i> Alianzas y Empresas</h2>
+                <p class="section-description">Construimos puentes con empresas, fundaciones y organizaciones que
+                    comparten nuestra visión de una sociedad más inclusiva.</p>
+
+                <div class="partnership-benefits">
+                    <div class="benefit-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Impacto Social</h3>
+                        <p>Contribuye directamente al desarrollo y bienestar de una población vulnerable.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Visibilidad de Marca</h3>
+                        <p>Asocia tu marca a una causa noble y refuerza tu compromiso social.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Programas de RSE</h3>
+                        <p>Integra nuestras iniciativas en tus estrategias de Responsabilidad Social Empresarial.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <p class="lead">¿Tu empresa desea generar un impacto significativo?</p>
+                    <a href="contacto.html" class="btn btn-primary btn-large">Explorar Alianzas</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="call-to-action">
+            <div class="container">
+                <h2>¿Tienes Otra Idea para Ayudarnos?</h2>
+                <p>Estamos abiertos a nuevas propuestas y formas de colaboración. ¡Contáctanos!</p>
+                <a href="contacto.html" class="btn btn-secondary btn-large">Hablemos</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section about-us">
+                <h3>Corporación Dicrart</h3>
+                <p>Institución Privada sin Ánimo de Lucro de educación no formal, enfocada en el desarrollo de personas
+                    con Discapacidad Cognitiva, Auditiva, física y/o problemas de aprendizaje y comportamiento.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Corporacion.dicrart" target="_blank" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/corporacion_dicrart/" target="_blank" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/DICRART" target="_blank" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="https://tiktok.com/@Dicrart" target="_blank" aria-label="TikTok"><i
+                            class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Cl. 17 Sur #40c-61, Bogotá</p>
+                <p><i class="fas fa-phone"></i> 323 2068199</p>
+                <p><i class="fas fa-envelope"></i> <a
+                        href="mailto:info@corporaciondicrart.com">info@corporaciondicrart.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+573232068199" target="_blank">Escríbenos por
+                        WhatsApp</a></p>
+                <p><i class="fas fa-clock"></i> Horario: Lunes a Viernes 8:00 a.m. - 5:00 p.m.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="programas.html">Nuestros Programas</a></li>
+                    <li><a href="como-ayudar.html">Cómo Ayudar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Mantente Informado</h3>
+                <p>Suscríbete a nuestro boletín para recibir noticias y actualizaciones.</p>
+                <form action="#" method="POST" class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required
+                        aria-label="Correo electrónico para suscribirse">
+                    <button type="submit" class="btn btn-secondary">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 Corporación Dicrart. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

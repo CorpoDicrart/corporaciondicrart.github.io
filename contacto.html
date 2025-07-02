@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Corporación Dicrart</title>
+    <meta name="description" content="Contáctanos para información sobre nuestros programas, voluntariado o donaciones para personas con discapacidad en Bogotá.">
+    <meta name="keywords" content="contacto Corporación Dicrart, teléfono Dicrart, email Dicrart, dirección Dicrart, Bogotá, discapacidad">
+    <meta name="author" content="Corporación Dicrart">
+
+    <meta property="og:title" content="Contacto - Corporación Dicrart">
+    <meta property="og:description" content="Contáctanos para información sobre nuestros programas, voluntariado o donaciones para personas con discapacidad en Bogotá.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:url" content="https://www.corporaciondicrart.com/contacto.html">
+    <meta property="og:type" content="website">
+
+        <link rel="shortcut icon" href="/img/logo/logo-sin-fondo.png" type="image/x-icon">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-o683f/3E2eR5k9eR9z/oJv2R4zP8V7wA+K2lM3D1Wp5v1u9/Qv2v2Zt2/o2Y0Z8N5P/m9b3t/z6R5d4y8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/img/logo/logo-sin-fondo.png" alt="Logo Corporación Dicrart">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="programas.html">Nuestros Programas</a></li>
+                    <li><a href="como-ayudar.html">Cómo Ayudar</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="como-ayudar.html#donar" class="btn btn-primary">Dona Ahora</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero bg-contact" style="background-image: url('assets/img/contact-hero.webp');">
+            <div class="container">
+                <h1>Contáctanos</h1>
+                <p>Estamos aquí para escucharte y resolver tus dudas.</p>
+            </div>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="container grid-2-columns">
+                <div class="contact-details">
+                    <h2>Información de Contacto</h2>
+                    <p><i class="fas fa-map-marker-alt icon-large"></i> **Dirección:** Cl. 17 Sur #40c-61, Bogotá</p>
+                    <p><i class="fas fa-phone icon-large"></i> **Teléfono:** <a href="tel:+573232068199">323 2068199</a></p>
+                    <p><i class="fas fa-envelope icon-large"></i> **Email:** <a href="mailto:info@corporaciondicrart.com">info@corporaciondicrart.com</a></p>
+                    <p><i class="fab fa-whatsapp icon-large"></i> **WhatsApp:** <a href="https://wa.me/+573232068199" target="_blank">323 2068199</a></p>
+                    <p><i class="fas fa-clock icon-large"></i> **Horario de Atención:** Lunes a Viernes: 8:00 a.m. - 5:00 p.m.</p>
+                    
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <div class="social-links large-icons">
+                        <a href="https://www.facebook.com/Corporacion.dicrart" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/corporacion_dicrart/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/DICRART" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://tiktok.com/@Dicrart" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Envíanos un Mensaje</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono (opcional):</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Asunto:</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tu Mensaje:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <div id="formStatus" class="form-message" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2>Nuestra Ubicación</h2>
+                <div class="map-embed">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.840746654876!2d-74.1205629!3d4.6293998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f98c8c22b9c7b%3A0x6b4c10c1f51b7c1!2sCl.%2017%20Sur%20%2340c-61%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1717366367807!5m2!1ses-419!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Ubicación de Corporación Dicrart en Google Maps"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-section about-us">
+                <h3>Corporación Dicrart</h3>
+                <p>Institución Privada sin Ánimo de Lucro de educación no formal, enfocada en el desarrollo de personas con Discapacidad Cognitiva, Auditiva, física y/o problemas de aprendizaje y comportamiento.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Corporacion.dicrart" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/corporacion_dicrart/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/DICRART" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://tiktok.com/@Dicrart" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section contact-info">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Cl. 17 Sur #40c-61, Bogotá</p>
+                <p><i class="fas fa-phone"></i> 323 2068199</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@corporaciondicrart.com">info@corporaciondicrart.com</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/+573232068199" target="_blank">Escríbenos por WhatsApp</a></p>
+                <p><i class="fas fa-clock"></i> Horario: Lunes a Viernes 8:00 a.m. - 5:00 p.m.</p>
+            </div>
+            <div class="footer-section quick-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="programas.html">Nuestros Programas</a></li>
+                    <li><a href="como-ayudar.html">Cómo Ayudar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Mantente Informado</h3>
+                <p>Suscríbete a nuestro boletín para recibir noticias y actualizaciones.</p>
+                <form action="#" method="POST" class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required aria-label="Correo electrónico para suscribirse">
+                    <button type="submit" class="btn btn-secondary">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 Corporación Dicrart. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

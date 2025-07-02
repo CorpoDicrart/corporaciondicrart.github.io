@@ -1,0 +1,250 @@
+/* Responsive CSS para una experiencia móvil en 2025 */
+
+/* Tabletas y pantallas medianas (768px a 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; } /* Ajuste para títulos */
+
+    .main-nav .nav-list li {
+        margin-left: 20px;
+    }
+
+    .hero-section {
+        padding: 100px 0;
+        min-height: 60vh;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .hero-content p {
+        font-size: 1.15rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .impact-metrics {
+        flex-direction: column; /* Apila las métricas */
+        gap: 30px;
+    }
+    .metric-item {
+        min-width: unset; /* Eliminar min-width para que se ajuste mejor */
+        width: 100%; /* Ocupa el ancho completo */
+        margin: 0; /* Elimina márgenes laterales */
+    }
+    .metric-item h3 {
+        font-size: 3rem;
+    }
+
+    .testimonial-item {
+        flex: 0 0 90%; /* En tablet, muestra un testimonio casi completo a la vez */
+        margin-right: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    /* Contact Page Specific */
+    .grid-2-columns {
+        grid-template-columns: 1fr; /* Una columna para móviles y tabletas */
+        gap: 40px;
+    }
+    .contact-details h2, .contact-form-container h2 {
+        text-align: center; /* Centrar títulos en móvil */
+        margin: 0 auto 25px auto; /* Centrar y añadir margen */
+        border-bottom: 2px solid var(--primary-color);
+        width: fit-content; /* Para que la línea se ajuste al texto */
+    }
+    .contact-details {
+        text-align: center; /* Centrar el bloque de detalles de contacto */
+    }
+    .contact-details p {
+        justify-content: center; /* Centrar los iconos y texto */
+    }
+    .social-links {
+        justify-content: center; /* Centrar iconos sociales */
+    }
+}
+
+/* Móviles (hasta 767px) */
+@media (max-width: 767px) {
+    section {
+        padding: 60px 0;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .btn-large {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    /* Header */
+    .main-header {
+        padding: 10px 0;
+    }
+    .header-content {
+        flex-wrap: nowrap; /* Asegura que no haya salto de línea inesperado */
+    }
+    .logo img {
+        height: 50px;
+    }
+    .main-nav {
+        order: 1; /* Pone el botón de menú antes del logo en el flexbox */
+        margin-right: auto; /* Empuja el logo a la derecha */
+    }
+    .header-actions {
+        order: 3; /* Mantiene las acciones a la derecha */
+        margin-left: 15px; /* Espacio entre acciones y logo */
+    }
+    .main-nav .nav-list {
+        display: none; /* Ocultar menú en móviles por defecto */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white);
+        position: absolute;
+        top: 80px; /* Altura del header */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        z-index: 999; /* Asegura que el menú esté sobre el contenido */
+    }
+    .main-nav .nav-list.active { /* Clase activa para mostrar el menú con JS */
+        display: flex;
+    }
+    .main-nav .nav-list li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .main-nav .nav-list a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+    .menu-toggle {
+        display: block; /* Mostrar botón de menú en móviles */
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 80px 0;
+        min-height: 50vh;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero-actions {
+        flex-direction: column;
+    }
+    .hero-actions .btn {
+        width: 80%;
+        max-width: 300px;
+        margin: 8px auto;
+    }
+
+    /* About Brief */
+    .features-grid {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+
+    /* Our Impact */
+    .metric-item {
+        padding: 15px;
+    }
+    .metric-item h3 {
+        font-size: 2.8rem;
+    }
+    .metric-item h3::after {
+        font-size: 1.5rem;
+        top: 0;
+        right: -5px;
+    }
+
+    /* Testimonials */
+    .testimonial-slider {
+        margin-left: -15px; /* Compensa el padding del container */
+        margin-right: -15px;
+        padding: 0 15px; /* Asegura padding para los items internos */
+    }
+    .testimonial-item {
+        flex: 0 0 100%; /* Ocupa el 100% en móviles */
+        margin-right: 0; /* Elimina margen derecho */
+    }
+
+    /* Call to Action */
+    .call-to-action h2 {
+        font-size: 2rem;
+    }
+    .call-to-action p {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr; /* Una columna */
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 30px;
+    }
+    .footer-section h3 {
+        text-align: center; /* Centra los títulos del footer */
+    }
+    .footer-section p {
+        text-align: center;
+    }
+    .footer-section ul {
+        padding: 0;
+    }
+    .footer-section ul li {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center; /* Centrar iconos sociales */
+        display: flex;
+    }
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center; /* Centrar el formulario */
+    }
+    .newsletter-form input[type="email"],
+    .newsletter-form button {
+        width: 90%; /* Ajusta el ancho para el móvil */
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .newsletter-form button {
+        margin-top: 5px;
+    }
+
+    /* Contact Page Specific */
+    .contact-details p {
+        text-align: center; /* Centrar el texto en móviles */
+        justify-content: center; /* Centrar iconos y texto */
+    }
+    .contact-details h2, .contact-form-container h2 {
+        font-size: 1.7rem;
+    }
+    .map-embed iframe {
+        height: 300px;
+    }
+}
